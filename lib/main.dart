@@ -15,11 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: RegisTheme.primary[400]),
-        useMaterial3: true,
-        fontFamily: 'Roboto',
-      ),
+      theme: RegisTheme.theme(),
       home: const LoginScreen(),
     );
   }
