@@ -10,11 +10,11 @@ part 'auth_event.dart';
 part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
-  final LoginUseCase loginUseCase;
+  final AuthLoginUseCase _loginUseCase;
 
-  AuthBloc({
-    required this.loginUseCase,
-  }) : super(AuthInitialState()) {
+  AuthBloc(
+    this._loginUseCase,
+  ) : super(AuthInitialState()) {
     on<AuthLoginEvent>((event, emit) async {
       await _login(event, emit);
     });
@@ -23,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Future _login(AuthLoginEvent event, Emitter emit) async {
     emit(AuthLoginLoadingState());
 
-    final result = await loginUseCase
+    final result = await _loginUseCase
         .call(LoginParams(email: event.email, password: event.password));
 
     result.fold(
