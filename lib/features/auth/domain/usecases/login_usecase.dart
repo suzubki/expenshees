@@ -5,10 +5,10 @@ import 'package:mibloc/core/usecases/usecase.dart';
 import 'package:mibloc/features/auth/domain/entities/user.dart';
 import 'package:mibloc/features/auth/domain/repositories/__repositores.dart';
 
-class LoginUseCase implements UseCase<AuthenticatedUser, LoginParams> {
+class AuthLoginUseCase implements UseCase<AuthenticatedUser, LoginParams> {
   final AuthRepository _repository;
 
-  const LoginUseCase(this._repository);
+  const AuthLoginUseCase(this._repository);
 
   @override
   Future<Either<Failure, AuthenticatedUser>> call(LoginParams params) async {
