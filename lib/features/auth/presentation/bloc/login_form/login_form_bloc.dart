@@ -1,12 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
+import 'package:mibloc/core/extensions/extensions.dart';
 
 part 'login_form_event.dart';
 part 'login_form_state.dart';
 
-class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
-  LoginFormBloc() : super(const LoginFormInitialState()) {
+class AuthLoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
+  AuthLoginFormBloc() : super(const LoginFormInitialState()) {
     on<LoginFormEmailChangedEvent>(_emailChanged);
     on<LoginFormPasswordChangedEvent>(_passwordChanged);
   }
@@ -29,6 +30,9 @@ class LoginFormBloc extends Bloc<LoginFormEvent, LoginFormState> {
   }
 
   bool _isValid(String email, String password) {
-    return email.isNotEmpty && password.isNotEmpty;
+    return email.isNotEmpty &&
+        password.isNotEmpty &&
+        email.isEmailValid &&
+        password.isPasswordValid;
   }
 }
