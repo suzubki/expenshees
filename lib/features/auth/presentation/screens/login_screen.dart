@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mibloc/core/theme.dart';
 import 'package:mibloc/core/widgets/buttons/__butons.dart';
 import 'package:mibloc/core/widgets/inputs/regis_input.dart';
+import 'package:mibloc/core/widgets/inputs/regis_text_field.dart';
 import 'package:mibloc/core/widgets/regis_scaffold.dart';
-import 'package:mibloc/utils/extensions.dart';
+import 'package:mibloc/core/extensions/extensions.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -14,16 +15,22 @@ class LoginScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          kToolbarHeight.pv,
+          kToolbarHeight.height,
           Text(
             'Login to Regis',
             style: Theme.of(context).textTheme.titleLarge,
           ),
-          24.pv,
-          const RegisInput(label: 'Email'),
-          16.pv,
+          24.height,
+          // const RegisInput(label: 'Email'),
+          RegisTextField(
+              validatorLabel: RegisTextFieldValidator.email,
+              isRequired: true,
+              onChanged: (val) {
+                return null;
+              }),
+          16.height,
           const RegisInput(label: 'Password'),
-          24.pv,
+          24.height,
           Text(
             'Forgot your password?',
             style: Theme.of(context).textTheme.bodySmall!.copyWith(
@@ -40,7 +47,7 @@ class LoginScreen extends StatelessWidget {
                   ),
             ),
           ),
-          24.pv,
+          24.height,
           Row(
             children: [
               Text(
