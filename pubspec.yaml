@@ -33,8 +33,11 @@ dependencies:
   equatable: ^2.0.5
   flutter:
     sdk: flutter
+  json_annotation: ^4.9.0
 
 dev_dependencies:
+  json_serializable: ^6.8.0
+  build_runner: ^2.4.9
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
