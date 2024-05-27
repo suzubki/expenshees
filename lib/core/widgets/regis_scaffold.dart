@@ -10,7 +10,7 @@ class RegisScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        toolbarHeight: 16,
+        toolbarHeight: 0,
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 48),
