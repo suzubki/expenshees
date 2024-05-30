@@ -3,10 +3,9 @@ import 'package:mibloc/core/api/api_url.dart';
 import 'package:mibloc/core/errors/exception.dart';
 import 'package:mibloc/features/auth/data/models/login_model.dart';
 import 'package:mibloc/features/auth/data/models/user_model.dart';
-import 'package:mibloc/features/auth/domain/usecases/login_usecase.dart';
 
 sealed class AuthRemoteDataSource {
-  Future<AuthenticatedUserModel> signInWithEmailAndPassword(LoginParams params);
+  Future<AuthenticatedUserModel> signInWithEmailAndPassword(LoginModel params);
   Future<void> signUpWithEmailAndPassword(String email, String password);
   Future<void> signOut();
   Future<void> isSignedIn();
@@ -32,14 +31,19 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
 
   @override
   Future<AuthenticatedUserModel> signInWithEmailAndPassword(
-      LoginParams params) async {
+      LoginModel model) async {
     try {
-      final model = LoginModel(email: params.email, password: params.password);
-
       final result = await httpClient.post(ApiUrl.login, data: model.toJson());
 
       return AuthenticatedUserModel.fromJson(result.data);
     } catch (e) {
+      if (e is DioException) {
+        if (e.type == DioExceptionType.badResponse) {
+          throw AuthException();
+        } else {
+          ServerException();
+        }
+      }
       throw ServerException();
     }
   }
