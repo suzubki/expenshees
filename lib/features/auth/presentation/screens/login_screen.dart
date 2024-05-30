@@ -4,8 +4,8 @@ import 'package:mibloc/core/configs/injector_conf.dart';
 import 'package:mibloc/core/extensions/extensions.dart';
 import 'package:mibloc/core/theme.dart';
 import 'package:mibloc/core/widgets/buttons/__butons.dart';
+import 'package:mibloc/core/widgets/dialogs/__dialogs.dart';
 import 'package:mibloc/core/widgets/regis_scaffold.dart';
-import 'package:mibloc/core/widgets/snackbar/regis_snackbar.dart';
 import 'package:mibloc/features/auth/presentation/bloc/auth/auth_bloc.dart';
 import 'package:mibloc/features/auth/presentation/bloc/login_form/login_form_bloc.dart';
 import 'package:mibloc/features/auth/presentation/widgets/auth_input_fields.dart';
@@ -44,14 +44,10 @@ class LoginScreen extends StatelessWidget {
             24.height,
             BlocConsumer<AuthBloc, AuthState>(
               builder: (context, state) {
-                if (state is AuthLoginLoadingState) {
-                  return const CircularProgressIndicator();
-                }
-
                 return RegisFilledButton(
                   onPressed: () => _login(context),
                   child: Text(
-                    'Login',
+                    'Sign in',
                     style: Theme.of(context)
                         .textTheme
                         .bodyLarge!
@@ -60,8 +56,27 @@ class LoginScreen extends StatelessWidget {
                 );
               },
               listener: (_, state) {
+                if (state is AuthLoginLoadingState) {
+                  showDialog(
+                      barrierDismissible: false,
+                      context: context,
+                      builder: (_) => const RegisLoadingDialog());
+                }
+
                 if (state is AuthLoginFailureState) {
-                  regisSnackbar(context, state.message);
+                  Navigator.of(context).pop();
+
+                  showDialog(
+                      context: context,
+                      builder: (_) => RegisErrorDialog(
+                            title: 'Sign in failed',
+                            content: state.message,
+                            confirmText: 'OK',
+                          ));
+                }
+
+                if (state is AuthLoginSuccessState) {
+                  Navigator.of(context).pop();
                 }
               },
             ),
