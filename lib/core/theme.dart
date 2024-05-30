@@ -19,6 +19,12 @@ class RegisTheme {
           fontFamily: 'Roboto',
           letterSpacing: -0.002,
         ),
+        titleSmall: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
+          fontFamily: 'Roboto',
+          letterSpacing: -0.002,
+        ),
         bodyLarge: TextStyle(
           fontSize: 14,
           fontWeight: FontWeight.w500,
