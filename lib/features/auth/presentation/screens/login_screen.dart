@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mibloc/core/configs/injector_conf.dart';
+import 'package:mibloc/core/configs/injector_config.dart';
 import 'package:mibloc/core/extensions/extensions.dart';
 import 'package:mibloc/core/theme.dart';
 import 'package:mibloc/core/widgets/buttons/__butons.dart';

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:mibloc/core/configs/injector_conf.dart';
+import 'package:mibloc/core/configs/injector_config.dart';
 import 'package:mibloc/features/auth/data/datasources/remote/auth_datasource_remote_impl.dart';
 import 'package:mibloc/features/auth/data/repositories/__repositories.dart';
 import 'package:mibloc/features/auth/domain/usecases/login_usecase.dart';
