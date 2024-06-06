@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mibloc/core/configs/injector_conf.dart';
+import 'package:mibloc/core/configs/injector_config.dart';
 import 'package:mibloc/core/theme.dart';
 import 'package:mibloc/core/utils/bloc_observer.dart';
 import 'package:mibloc/features/auth/presentation/bloc/auth/auth_bloc.dart';
-import 'package:mibloc/features/auth/presentation/screens/login_screen.dart';
+import 'package:mibloc/routes/app_route_config.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,9 +28,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       theme: RegisTheme.theme(),
-      home: const LoginScreen(),
+      routerConfig: AppRouter.router,
     );
   }
 }
