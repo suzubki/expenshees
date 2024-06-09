@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "187440582856",
+    "project_id": "expenshees",
+    "storage_bucket": "expenshees.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187440582856:android:1de201f9a706f9f41a55fd",
+        "android_client_info": {
+          "package_name": "com.example.mibloc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYF9YHVmlgTGBlXlw-XFHgLWQN7RSjUC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187440582856:android:f554fab19ce9a08b1a55fd",
+        "android_client_info": {
+          "package_name": "com.expenshees"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYF9YHVmlgTGBlXlw-XFHgLWQN7RSjUC0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
