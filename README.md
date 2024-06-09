@@ -19,3 +19,9 @@ samples, guidance on mobile development, and a full API reference.
 
 ### Generate files
 ``` dart run build_runner build -d```
+
+### Generate apk
+``` flutter build apk```
+
+### Generate aab
+``` flutter build appbundle```
