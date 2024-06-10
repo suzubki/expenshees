@@ -24,7 +24,7 @@ class RegisGenericDialog extends StatelessWidget {
           children: [
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -32,12 +32,12 @@ class RegisGenericDialog extends StatelessWidget {
             16.height,
             Text(
               content,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 16,
               ),
             ),
             16.height,
-            RegisFilledButton(onPressed: () {}, child: Text('OK')),
+            RegisFilledButton(onPressed: () {}, child: const Text('OK')),
           ],
         ),
       ),
