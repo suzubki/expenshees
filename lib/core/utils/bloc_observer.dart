@@ -4,7 +4,7 @@ import 'logger.dart';
 class RegisBlocObserver extends BlocObserver {
   @override
   void onEvent(Bloc bloc, Object? event) {
-    regisLogger.d('Event Bloc $bloc');
+    regisLogger.d('Event Bloc $bloc $event');
 
     super.onEvent(bloc, event);
   }
