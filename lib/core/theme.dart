@@ -34,7 +34,7 @@ class RegisTheme {
           fontFamily: 'Roboto',
         ),
         bodySmall: TextStyle(
-          fontSize: 10,
+          fontSize: 12,
           letterSpacing: -0.002,
           fontFamily: 'Roboto',
         ),
