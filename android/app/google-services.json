@@ -12,7 +12,12 @@
           "package_name": "com.example.mibloc"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "187440582856-7drobntdv637rio8lnnr50qc2ef204p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBYF9YHVmlgTGBlXlw-XFHgLWQN7RSjUC0"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187440582856-7drobntdv637rio8lnnr50qc2ef204p3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "187440582856-7u0t40vgkt4fja60rrgrfd848jbouirp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mibloc"
+              }
+            }
+          ]
         }
       }
     },
@@ -31,7 +48,20 @@
           "package_name": "com.expenshees"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "187440582856-geo6n3rjk5trskpq06tguar3675jlni1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.expenshees",
+            "certificate_hash": "d2db173c28cda0ec4653600932e4fd9ffcb153b5"
+          }
+        },
+        {
+          "client_id": "187440582856-7drobntdv637rio8lnnr50qc2ef204p3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBYF9YHVmlgTGBlXlw-XFHgLWQN7RSjUC0"
@@ -39,7 +69,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187440582856-7drobntdv637rio8lnnr50qc2ef204p3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "187440582856-7u0t40vgkt4fja60rrgrfd848jbouirp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.mibloc"
+              }
+            }
+          ]
         }
       }
     }
