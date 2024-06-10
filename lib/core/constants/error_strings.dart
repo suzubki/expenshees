@@ -9,4 +9,7 @@ class ErrorStrings {
 
   static const String unknownError =
       'Something went wrong. Please try again later.';
+
+  static const String canceledAuthorizationError =
+      'Oops! We were unable to sign you in. Please try again.';
 }
