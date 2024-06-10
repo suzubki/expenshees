@@ -100,10 +100,11 @@ class LoginScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset(IconsAssets.google, width: 20, height: 20),
+                    SvgPicture.asset(IconsAssets.google, width: 16, height: 16),
                     8.width,
-                    const Text('Sign up with Google',
-                        style: TextStyle(color: Colors.black)),
+                    Text('Sign in with Google',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.w500)),
                   ],
                 )),
             12.height,
@@ -116,9 +117,10 @@ class LoginScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset(IconsAssets.apple, width: 20, height: 20),
-                    8.width,
-                    const Text('Sign up with Apple',
-                        style: TextStyle(color: Colors.black)),
+                    4.width,
+                    Text('Sign in with Apple',
+                        style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                            color: Colors.black, fontWeight: FontWeight.w500)),
                   ],
                 )),
           ],
