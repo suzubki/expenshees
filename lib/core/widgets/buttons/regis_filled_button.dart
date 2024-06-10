@@ -20,27 +20,27 @@ class RegisFilledButton extends StatelessWidget {
     return FilledButton(
       style: ButtonStyle(
         side: hasBorder
-            ? MaterialStateProperty.resolveWith(
+            ? WidgetStateProperty.resolveWith(
                 (states) => const BorderSide(color: Colors.black, width: 0.5),
               )
             : null,
-        shape: MaterialStatePropertyAll(
+        shape: WidgetStatePropertyAll(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8),
           ),
         ),
-        minimumSize: MaterialStateProperty.resolveWith(
+        minimumSize: WidgetStateProperty.resolveWith(
             (states) => const Size(double.infinity, 44)),
-        backgroundColor: MaterialStateProperty.resolveWith((states) {
+        backgroundColor: WidgetStateProperty.resolveWith((states) {
           if (color != null) {
-            if (states.contains(MaterialState.hovered)) {
+            if (states.contains(WidgetState.hovered)) {
               return color!.withOpacity(0.8);
             } else {
               return color!;
             }
           }
 
-          if (states.contains(MaterialState.hovered)) {
+          if (states.contains(WidgetState.hovered)) {
             return RegisTheme.primary[400].withOpacity(0.8);
           } else {
             return RegisTheme.primary[400];
