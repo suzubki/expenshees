@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mibloc/core/extensions/extensions.dart';
 import 'package:mibloc/core/theme.dart';
 
 class SignUpSuggestion extends StatelessWidget {
@@ -12,6 +13,7 @@ class SignUpSuggestion extends StatelessWidget {
           "Don't Have an account?",
           style: Theme.of(context).textTheme.bodySmall,
         ),
+        4.width,
         Text(
           "Sign up",
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
