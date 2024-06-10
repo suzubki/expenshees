@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 class RegisTheme {
   static const Map<int, dynamic> gray = {
+    100: Color(0xFFFFFFFF),
+    200: Color(0xFFF5F5F5),
     300: Color(0xFFD7D7D7),
     400: Color(0xFFBDBDBD),
   };
