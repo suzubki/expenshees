@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fpdart/fpdart.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mibloc/core/errors/exception.dart';
 import 'package:mibloc/core/errors/failure.dart';
 import 'package:mibloc/features/auth/data/datasources/remote/auth_datasource_remote_impl.dart';
@@ -46,5 +48,37 @@ class AuthRepositoryImpl implements AuthRepository {
   @override
   Future<String> getUser() async {
     return await Future.value('user');
+  }
+
+  @override
+  Future<void> signUpWithAppleProvider() {
+    // TODO: implement signUpWithAppleProvider
+    throw UnimplementedError();
+  }
+
+  @override
+  Future<Either<Failure, UserCredential>> signUpWithGoogleProvider() async {
+    try {
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+
+      final result =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+
+      return Right(result);
+    } catch (e) {
+      if (e is AssertionError) {
+        return Left(CanceledAuthorizationFailure());
+      }
+
+      return Left(CredentialFailure());
+    }
   }
 }

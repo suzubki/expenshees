@@ -8,6 +8,7 @@ sealed class AuthEvent extends Equatable {
   List<Object?> get props => [];
 }
 
+// ----------------- Auth Login Events -----------------
 final class AuthLoginEvent extends AuthEvent {
   final String email;
   final String password;
@@ -21,6 +22,9 @@ final class AuthLoginEvent extends AuthEvent {
   List<Object?> get props => [email, password];
 }
 
+final class AuthLoginWithProviderEvent extends AuthEvent {}
+
+// ----------------- Auth Register With Provider Events -----------------
 final class AuthRegisterEvent extends AuthEvent {
   final String email;
   final String password;

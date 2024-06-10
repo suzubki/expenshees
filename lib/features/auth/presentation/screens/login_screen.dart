@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:mibloc/core/constants/assets.dart';
 import 'package:mibloc/core/configs/injector_config.dart';
+import 'package:mibloc/core/constants/assets.dart';
 import 'package:mibloc/core/extensions/extensions.dart';
 import 'package:mibloc/core/theme.dart';
 import 'package:mibloc/core/widgets/buttons/__butons.dart';
@@ -26,6 +25,10 @@ class LoginScreen extends StatelessWidget {
           email: authForm.email.trim(),
           password: authForm.password.trim(),
         ));
+  }
+
+  void _loginWithProvider(BuildContext context) {
+    context.read<AuthBloc>().add(AuthLoginWithProviderEvent());
   }
 
   @override
@@ -90,7 +93,9 @@ class LoginScreen extends StatelessWidget {
             RegisFilledButton(
                 hasBorder: true,
                 color: RegisTheme.gray[100],
-                onPressed: () {},
+                onPressed: () {
+                  _loginWithProvider(context);
+                },
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.center,
